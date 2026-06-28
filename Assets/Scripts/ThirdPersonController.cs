@@ -19,6 +19,7 @@ namespace DefaultNamespace
 
         private CharacterController controller;
         private Animator anim;
+
         private Camera cam;
 
         private bool isGrounded;
@@ -35,7 +36,7 @@ namespace DefaultNamespace
         {
             controller = GetComponent<CharacterController>();
             PlayerInput = GetComponent<PlayerInput>();
-            //anim = GetComponentInChildren<Animator>();
+            anim = GetComponentInChildren<Animator>();
             cam = Camera.main;
             
             Cursor.lockState = CursorLockMode.Locked;
@@ -72,28 +73,32 @@ namespace DefaultNamespace
         {
             // Calcular velocidad objetivo (respeta magnitud del joystick)
             float targetSpeed = movementSpeed * inputVector.magnitude;
-            
+
             // Suavizar velocidad actual
             currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedVelocity, movementSmoothFactor);
-            
+
             // Calcular y aplicar movimiento
             Vector3 movement = Vector3.zero;
-            
+
             if (inputVector.magnitude > 0)
             {
                 // Calcular ángulo de rotación
                 float angle = Mathf.Atan2(inputVector.x, inputVector.y) * Mathf.Rad2Deg + cam.transform.eulerAngles.y;
-                
+
                 // Rotar suavemente
                 float smoothAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, angle, ref rotationVelocity, rotationSmoothFactor);
+
                 transform.rotation = Quaternion.Euler(0, smoothAngle, 0);
-                
+
                 // Mover hacia adelante
                 movement = transform.forward * currentSpeed;
             }
-            
+
             // Aplicar movimiento
             controller.Move((movement + verticalMovement) * Time.deltaTime);
+
+            // Actualizar animación
+            anim.SetFloat("Speed", currentSpeed);
         }
 
         private void ApplyGravity()
