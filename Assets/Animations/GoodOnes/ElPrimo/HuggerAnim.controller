@@ -175,7 +175,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AnimElPrimoController
+  m_Name: HuggerAnim
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Kick
