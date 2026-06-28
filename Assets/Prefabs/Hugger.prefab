@@ -991,7 +991,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5859868045947505724}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.24, y: 0, z: -36.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1061,7 +1061,9 @@ MonoBehaviour:
   - rid: 607187052466799307
   - rid: 607187052466799424
   - rid: 607187053999292742
-  m_OriginalGraph: {fileID: 0}
+  - rid: 1018291347644481802
+  - rid: 1018291347644481803
+  m_OriginalGraph: {fileID: -2735396089139638257, guid: 317067f22db02cd4fae87e9c60c2f229, type: 2}
   m_IsInitialised: 0
   m_IsStarted: 0
   references:
@@ -1091,6 +1093,22 @@ MonoBehaviour:
           m_Value1: 15476344096725038802
         Name: PlayerNeedHelp
         m_Value: 0
+    - rid: 1018291347644481802
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 6787928530870534691
+          m_Value1: 11698028012540618890
+        Name: Enemy
+        m_Value: {fileID: 0}
+    - rid: 1018291347644481803
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 18052942349586263338
+          m_Value1: 6066039793642819768
+        Name: Target
+        m_Value: {fileID: 0}
 --- !u!1 &5947946926981574523
 GameObject:
   m_ObjectHideFlags: 0
@@ -2273,7 +2291,7 @@ GameObject:
   - component: {fileID: 6672356348608080698}
   - component: {fileID: 2130115603450860878}
   m_Layer: 0
-  m_Name: ElPrimoMesh
+  m_Name: HuggerMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
