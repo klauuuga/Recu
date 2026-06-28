@@ -977,7 +977,7 @@ GameObject:
   - component: {fileID: 7626506066717584279}
   - component: {fileID: 1542092554929275486}
   m_Layer: 0
-  m_Name: ElPrimo
+  m_Name: Hugger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
